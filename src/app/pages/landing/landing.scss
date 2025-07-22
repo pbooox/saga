@@ -690,8 +690,9 @@ $shadow-xl:
 // Responsive adjustments
 @media (max-width: 767px) {
   .header {
-    .nav-menu {
-      display: none;
+    .nav-wrapper {
+      justify-content: space-between;
+      position: relative;
     }
 
     .auth-buttons {
@@ -702,6 +703,11 @@ $shadow-xl:
         font-size: 14px;
       }
     }
+  }
+
+  // Ensure body doesn't scroll when mobile menu is open
+  body.mobile-menu-open {
+    overflow: hidden;
   }
 
   .hero-section {
