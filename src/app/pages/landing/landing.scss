@@ -714,11 +714,6 @@ body {
     }
   }
 
-  // Ensure body doesn't scroll when mobile menu is open
-  body.mobile-menu-open {
-    overflow: hidden;
-  }
-
   .hero-section {
     .hero-title {
       font-size: 2rem;
