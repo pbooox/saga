@@ -7,4 +7,10 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["./landing.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Landing {}
+export class Landing {
+  isMobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+}
