@@ -4,6 +4,13 @@
   <header class="header">
     <div class="header-content">
       <div class="nav-wrapper">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
         <!-- Logo -->
         <div class="logo">
           <img
@@ -12,8 +19,8 @@
           />
         </div>
 
-        <!-- Navigation -->
-        <nav class="nav-menu">
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu desktop-nav">
           <a href="#" class="nav-link">Inicio</a>
           <a href="#" class="nav-link">Trámites</a>
           <a href="#" class="nav-link">Seguimiento de Trámite</a>
@@ -23,6 +30,22 @@
         <div class="auth-buttons">
           <button class="btn btn-outline">Iniciar Sesión</button>
           <button class="btn btn-primary">Regístrate</button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Sidebar -->
+      <div class="mobile-nav-sidebar" [class.active]="isMobileMenuOpen">
+        <div class="mobile-nav-overlay" (click)="toggleMobileMenu()"></div>
+        <div class="mobile-nav-content">
+          <nav class="mobile-nav-menu">
+            <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Inicio</a>
+            <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Trámites</a>
+            <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()">Seguimiento de Trámite</a>
+          </nav>
+          <div class="mobile-auth-buttons">
+            <button class="btn btn-outline" (click)="toggleMobileMenu()">Iniciar Sesión</button>
+            <button class="btn btn-primary" (click)="toggleMobileMenu()">Regístrate</button>
+          </div>
         </div>
       </div>
     </div>
