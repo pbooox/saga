@@ -33,6 +33,15 @@ $shadow-xl:
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+
+  &.mobile-menu-open {
+    overflow: hidden;
+  }
+}
+
 .landing-container {
   font-family:
     "Roboto",
