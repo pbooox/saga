@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject, DOCUMENT } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  DOCUMENT,
+} from "@angular/core";
 
 @Component({
   selector: "app-landing",
@@ -15,9 +20,9 @@ export class Landing {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
     if (this.isMobileMenuOpen) {
-      this.document.body.classList.add('mobile-menu-open');
+      this.document.body.classList.add("mobile-menu-open");
     } else {
-      this.document.body.classList.remove('mobile-menu-open');
+      this.document.body.classList.remove("mobile-menu-open");
     }
   }
 }
