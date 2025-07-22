@@ -1,28 +1,13 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  DOCUMENT,
-} from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Header } from "../../components/header/header";
+import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: "app-landing",
   standalone: true,
+  imports: [Header, Footer],
   templateUrl: "./landing.html",
   styleUrls: ["./landing.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Landing {
-  private document = inject(DOCUMENT);
-  isMobileMenuOpen = false;
-
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-
-    if (this.isMobileMenuOpen) {
-      this.document.body.classList.add("mobile-menu-open");
-    } else {
-      this.document.body.classList.remove("mobile-menu-open");
-    }
-  }
-}
+export class Landing {}
