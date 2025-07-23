@@ -483,6 +483,29 @@ $shadow-xl:
         background: #fff7ed;
       }
 
+      // Material Icon styles
+      mat-icon {
+        font-size: 31px;
+        width: 31px;
+        height: 31px;
+
+        &.clock-icon {
+          color: #2563EB;
+        }
+
+        &.shield-icon, &.verified-icon {
+          color: #16A34A;
+        }
+
+        &.headset-icon {
+          color: #9333EA;
+        }
+
+        &.visibility-icon {
+          color: #EA580C;
+        }
+      }
+
       svg {
         width: 30px;
         height: 30px;
