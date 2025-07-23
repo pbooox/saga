@@ -483,6 +483,30 @@ $shadow-xl:
         background: #fff7ed;
       }
 
+      // Material Icon styles
+      mat-icon {
+        font-size: 31px;
+        width: 31px;
+        height: 31px;
+
+        &.clock-icon {
+          color: #2563eb;
+        }
+
+        &.shield-icon,
+        &.verified-icon {
+          color: #16a34a;
+        }
+
+        &.headset-icon {
+          color: #9333ea;
+        }
+
+        &.visibility-icon {
+          color: #ea580c;
+        }
+      }
+
       svg {
         width: 30px;
         height: 30px;
@@ -592,4 +616,32 @@ $shadow-xl:
 
 .hero-image.animated {
   opacity: 1;
+}
+
+// Global Material Icon styles
+.official-badge {
+  mat-icon.shield-icon {
+    color: #047857;
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.section-badge {
+  mat-icon.lightbulb-icon {
+    color: #2563eb;
+    font-size: 17px;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.btn {
+  mat-icon {
+    font-size: 17px;
+    width: 17px;
+    height: 17px;
+    margin-left: 0.5rem;
+  }
 }
