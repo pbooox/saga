@@ -239,10 +239,6 @@
     .benefit-icon {
       width: 76px;
       height: 76px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin-bottom: 0.5rem;
 
       // Material Icon styles
@@ -250,23 +246,6 @@
         font-size: 31px;
         width: 31px;
         height: 31px;
-
-        &.clock-icon {
-          color: #2563eb;
-        }
-
-        &.shield-icon,
-        &.verified-icon {
-          color: #16a34a;
-        }
-
-        &.headset-icon {
-          color: #9333ea;
-        }
-
-        &.visibility-icon {
-          color: #ea580c;
-        }
       }
 
       svg {
