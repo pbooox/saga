@@ -1,126 +1,9 @@
-// Import Google Fonts if not already imported
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
-// Variables
-$primary-color: #059669;
-$secondary-color: #d97706;
-$blue-color: #2563eb;
-$green-color: #047857;
-$gray-50: #f9fafb;
-$gray-100: #f3f4f6;
-$gray-500: #6b7280;
-$gray-600: #4b5563;
-$gray-700: #374151;
-$gray-800: #1f2937;
-$gray-900: #111827;
-$text-primary: #1e2b3b;
-$text-secondary: #475569;
-$text-muted: #334155;
-$border-color: #e5e7eb;
-$shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-$shadow-md:
-  0px 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0px 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg:
-  0px 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl:
-  0px 20px 25px -5px rgba(0, 0, 0, 0.1),
-  0px 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-// Base styles
-* {
-  box-sizing: border-box;
-}
+// Landing Page Specific Styles
+// Global variables, utilities, and components are now in styles.scss
 
 .landing-container {
-  font-family:
-    "Roboto",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 50%, #dbeafe 100%);
-  color: $text-primary;
-}
-
-// Container
-.container {
-  width: 100%;
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (min-width: 768px) {
-    padding: 0 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0 4rem;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 0;
-  }
-}
-
-// Button styles
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-
-  &.btn-primary {
-    background: $primary-color;
-    color: white;
-
-    &:hover {
-      background: #047857;
-    }
-  }
-
-  &.btn-secondary {
-    background: transparent;
-    color: $secondary-color;
-    border: 1px solid #f59e0b;
-
-    &:hover {
-      background: #f59e0b;
-      color: white;
-    }
-  }
-
-  &.btn-outline {
-    background: transparent;
-    color: $text-muted;
-    border: 1px solid #cbd5e1;
-
-    &:hover {
-      background: $gray-50;
-    }
-  }
-
-  &.btn-large {
-    padding: 1rem 2rem;
-  }
-
-  svg {
-    width: 16px;
-    height: 16px;
-  }
 }
 
 // Main content
@@ -158,28 +41,6 @@ $shadow-xl:
     }
   }
 
-  .official-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #ecfdf5;
-    border-radius: 9999px;
-    width: fit-content;
-
-    svg {
-      width: 15px;
-      height: 14px;
-    }
-
-    span {
-      color: $green-color;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-    }
-  }
-
   .hero-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -192,14 +53,14 @@ $shadow-xl:
     }
 
     .highlight {
-      color: $primary-color;
+      color: var(--primary-color, #059669);
     }
   }
 
   .hero-description {
     font-size: 1.125rem;
     line-height: 1.625;
-    color: $text-secondary;
+    color: var(--text-secondary, #475569);
     margin: 0;
 
     @media (min-width: 768px) {
@@ -233,7 +94,7 @@ $shadow-xl:
       text-align: center;
 
       &.primary {
-        color: $primary-color;
+        color: var(--primary-color, #059669);
       }
 
       &.warning {
@@ -247,7 +108,7 @@ $shadow-xl:
 
     .stat-label {
       font-size: 14px;
-      color: $text-secondary;
+      color: var(--text-secondary, #475569);
       text-align: center;
       line-height: 20px;
     }
@@ -272,59 +133,6 @@ $shadow-xl:
   padding: 4rem 0;
   background: white;
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #dbeafe;
-      border-radius: 9999px;
-      margin-bottom: 1.5rem;
-
-      svg {
-        width: 17px;
-        height: 17px;
-      }
-
-      span {
-        color: #1e40af;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 20px;
-      }
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0 0 1rem 0;
-      color: $gray-900;
-
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-
-      .highlight {
-        color: $blue-color;
-      }
-    }
-
-    .section-description {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: $text-secondary;
-      margin: 0;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
   .process-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -340,9 +148,7 @@ $shadow-xl:
     padding: 2rem;
     background: white;
     border-radius: 15px;
-    box-shadow:
-      0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
-      0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1), 0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
     position: relative;
 
     .step-content {
@@ -354,13 +160,13 @@ $shadow-xl:
       font-weight: 700;
       line-height: 1.75rem;
       margin: 0 0 1rem 0;
-      color: $gray-900;
+      color: var(--gray-900, #111827);
     }
 
     .step-description {
       font-size: 1rem;
       line-height: 1.625;
-      color: $gray-600;
+      color: var(--gray-600, #4b5563);
       margin: 0;
     }
 
@@ -371,16 +177,14 @@ $shadow-xl:
       width: 59px;
       height: 59px;
       border-radius: 15px;
-      background: linear-gradient(180deg, $blue-color 0%, #1d4ed8 100%);
+      background: linear-gradient(180deg, var(--blue-color, #2563eb) 0%, #1d4ed8 100%);
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
       font-weight: 700;
-      box-shadow:
-        0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
-        0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1), 0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -388,9 +192,7 @@ $shadow-xl:
     padding: 1.375rem;
     background: white;
     border-radius: 15px;
-    box-shadow:
-      0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
-      0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1), 0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -408,32 +210,8 @@ $shadow-xl:
 .benefits-section {
   padding: 4rem 0;
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin: 0 0 1rem 0;
-      color: $gray-900;
-
-      @media (min-width: 768px) {
-        font-size: 3rem;
-      }
-    }
-
-    .section-description {
-      font-size: 1.25rem;
-      line-height: 1.75;
-      color: $text-secondary;
-      margin: 0;
-    }
-  }
-
   .benefits-grid {
-    background: $gray-50;
+    background: var(--gray-50, #f9fafb);
     border-radius: 15px;
     padding: 3rem;
     display: grid;
@@ -466,22 +244,6 @@ $shadow-xl:
       align-items: center;
       justify-content: center;
       margin-bottom: 0.5rem;
-
-      &.blue {
-        background: #eff6ff;
-      }
-
-      &.green {
-        background: #ecfdf5;
-      }
-
-      &.purple {
-        background: #f3e8ff;
-      }
-
-      &.orange {
-        background: #fff7ed;
-      }
 
       // Material Icon styles
       mat-icon {
@@ -518,13 +280,13 @@ $shadow-xl:
       font-weight: 700;
       line-height: 1.75rem;
       margin: 0;
-      color: $gray-900;
+      color: var(--gray-900, #111827);
     }
 
     .benefit-description {
       font-size: 1rem;
       line-height: 1.625;
-      color: $gray-600;
+      color: var(--gray-600, #4b5563);
       margin: 0;
     }
   }
@@ -550,11 +312,6 @@ $shadow-xl:
   }
 
   .process-section {
-    .section-title {
-      font-size: 2rem;
-      line-height: 2.5rem;
-    }
-
     .process-grid {
       gap: 1.5rem;
     }
@@ -565,11 +322,6 @@ $shadow-xl:
   }
 
   .benefits-section {
-    .section-title {
-      font-size: 2rem;
-      line-height: 2.5rem;
-    }
-
     .benefits-grid {
       padding: 2rem;
       gap: 2rem;
@@ -577,18 +329,7 @@ $shadow-xl:
   }
 }
 
-// Animation and transitions
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+// Landing-specific animations
 .hero-content > * {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -612,13 +353,13 @@ $shadow-xl:
 .hero-image {
   animation: fadeInUp 0.8s ease-out 0.3s forwards;
   opacity: 0;
+
+  &.animated {
+    opacity: 1;
+  }
 }
 
-.hero-image.animated {
-  opacity: 1;
-}
-
-// Global Material Icon styles
+// Landing-specific Material Icon styles
 .official-badge {
   mat-icon.shield-icon {
     color: #047857;
@@ -634,14 +375,5 @@ $shadow-xl:
     font-size: 17px;
     width: 17px;
     height: 17px;
-  }
-}
-
-.btn {
-  mat-icon {
-    font-size: 17px;
-    width: 17px;
-    height: 17px;
-    margin-left: 0.5rem;
   }
 }
