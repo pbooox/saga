@@ -490,19 +490,20 @@ $shadow-xl:
         height: 31px;
 
         &.clock-icon {
-          color: #2563EB;
+          color: #2563eb;
         }
 
-        &.shield-icon, &.verified-icon {
-          color: #16A34A;
+        &.shield-icon,
+        &.verified-icon {
+          color: #16a34a;
         }
 
         &.headset-icon {
-          color: #9333EA;
+          color: #9333ea;
         }
 
         &.visibility-icon {
-          color: #EA580C;
+          color: #ea580c;
         }
       }
 
@@ -629,7 +630,7 @@ $shadow-xl:
 
 .section-badge {
   mat-icon.lightbulb-icon {
-    color: #2563EB;
+    color: #2563eb;
     font-size: 17px;
     width: 17px;
     height: 17px;
