@@ -4,6 +4,7 @@ import {
   inject,
   DOCUMENT,
 } from "@angular/core";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: "app-header",
