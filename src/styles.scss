@@ -33,9 +33,15 @@ $gray-900: #111827;
 
 // Shadow Variables
 $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-$shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-md:
+  0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:
+  0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:
+  0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0px 10px 10px -5px rgba(0, 0, 0, 0.04);
 
 // ========================================
 // GLOBAL RESET AND BASE STYLES
@@ -50,7 +56,15 @@ $shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0,
 html,
 body {
   height: 100%;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.5;
   color: $text-primary;
   -webkit-font-smoothing: antialiased;
@@ -233,7 +247,9 @@ img {
 .card {
   background: white;
   border-radius: 15px;
-  box-shadow: 0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1), 0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
+    0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
 
@@ -246,32 +262,36 @@ img {
 
   &.icon-blue {
     background: #eff6ff;
-    
-    mat-icon, svg {
+
+    mat-icon,
+    svg {
       color: #2563eb;
     }
   }
 
   &.icon-green {
     background: #ecfdf5;
-    
-    mat-icon, svg {
+
+    mat-icon,
+    svg {
       color: #16a34a;
     }
   }
 
   &.icon-purple {
     background: #f3e8ff;
-    
-    mat-icon, svg {
+
+    mat-icon,
+    svg {
       color: #9333ea;
     }
   }
 
   &.icon-orange {
     background: #fff7ed;
-    
-    mat-icon, svg {
+
+    mat-icon,
+    svg {
       color: #ea580c;
     }
   }
