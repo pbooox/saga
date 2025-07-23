@@ -1,20 +1,11 @@
-// Variables
-$primary-color: #059669;
-$text-muted: #334155;
-$border-color: #e5e7eb;
-$gray-50: #f9fafb;
-$shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-
-// Global body styles for mobile menu
-:global(body.mobile-menu-open) {
-  overflow: hidden;
-}
+// Header Component Specific Styles
+// Global variables, utilities, and components are now in styles.scss
 
 // Header
 .header {
   background: #fff;
-  border-bottom: 1px solid $border-color;
-  box-shadow: $shadow-sm;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: var(--shadow-sm, 0px 1px 2px 0px rgba(0, 0, 0, 0.05));
   position: sticky;
   top: 0;
   z-index: 50;
@@ -43,12 +34,12 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     background: none;
     border: none;
     cursor: pointer;
-    color: $text-muted;
+    color: var(--text-muted, #334155);
     transition: color 0.2s ease;
     z-index: 60;
 
     &:hover {
-      color: $primary-color;
+      color: var(--primary-color, #059669);
     }
 
     mat-icon {
@@ -88,7 +79,7 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   }
 
   .nav-link {
-    color: $text-muted;
+    color: var(--text-muted, #334155);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -96,7 +87,7 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     transition: color 0.2s ease;
 
     &:hover {
-      color: $primary-color;
+      color: var(--primary-color, #059669);
     }
   }
 
@@ -116,9 +107,7 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     z-index: 55;
     opacity: 0;
     visibility: hidden;
-    transition:
-      opacity 0.3s ease,
-      visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 
     &.active {
       opacity: 1;
@@ -167,7 +156,7 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   }
 
   .mobile-nav-link {
-    color: $text-muted;
+    color: var(--text-muted, #334155);
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -177,7 +166,7 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     transition: color 0.2s ease;
 
     &:hover {
-      color: $primary-color;
+      color: var(--primary-color, #059669);
     }
 
     &:last-child {
@@ -196,46 +185,6 @@ $shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
       width: 100%;
       justify-content: center;
     }
-  }
-}
-
-// Button styles
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-
-  &.btn-primary {
-    background: $primary-color;
-    color: white;
-
-    &:hover {
-      background: #047857;
-    }
-  }
-
-  &.btn-outline {
-    background: transparent;
-    color: $text-muted;
-    border: 1px solid #cbd5e1;
-
-    &:hover {
-      background: $gray-50;
-    }
-  }
-
-  svg {
-    width: 16px;
-    height: 16px;
   }
 }
 
