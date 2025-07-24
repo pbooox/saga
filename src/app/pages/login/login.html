@@ -1,0 +1,212 @@
+<!-- Main Container -->
+<div class="landing-container">
+  <!-- Header Component -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="login-main">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-content">
+          <!-- Left Panel -->
+          <div class="left-panel">
+            <div class="background-overlay"></div>
+            <div class="decorative-circle circle-top"></div>
+            <div class="decorative-circle circle-bottom"></div>
+
+            <div class="left-content">
+              <div class="logo-section">
+                <img
+                  ngSrc="/assets/images/web/logotipoBlanco.png"
+                  alt="Logo"
+                  height="500" width="1594"/>
+              </div>
+
+              <div class="welcome-card">
+                <h2 class="welcome-title">Bienvenido de nuevo</h2>
+                <p class="welcome-description">
+                  Accede al Sistema SAGA para gestionar tus trámites
+                  ambientales de forma rápida y segura.
+                </p>
+
+                <div class="features-list">
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <path d="M6.91569 10.6203L13.0452 4.48701L13.9779 5.43367L6.91569 12.5137L2.67834 8.26034L3.61109 7.327L6.91569 10.6203Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <span>Acceso seguro y confiable</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <path d="M6.91569 10.6203L13.0452 4.48701L13.9779 5.43367L6.91569 12.5137L2.67834 8.26034L3.61109 7.327L6.91569 10.6203Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <span>Gestión completa de trámites</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <path d="M6.91569 10.6203L13.0452 4.48701L13.9779 5.43367L6.91569 12.5137L2.67834 8.26034L3.61109 7.327L6.91569 10.6203Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <span>Seguimiento en tiempo real</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel -->
+          <div class="right-panel">
+            <div class="login-header">
+              <div class="shield-icon">
+                <svg width="26" height="24" viewBox="0 0 26 24" fill="none">
+                  <path d="M4.78 2.82L13 1L21.22 2.82C21.4467 2.87333 21.6333 2.99333 21.78 3.18C21.9267 3.36667 22 3.57333 22 3.8V13.78C22 14.7933 21.7633 15.74 21.29 16.62C20.8167 17.5 20.16 18.22 19.32 18.78L13 23L6.68 18.78C5.84 18.22 5.18333 17.5 4.71 16.62C4.23667 15.74 4 14.7933 4 13.78V3.8C4 3.57333 4.07333 3.36667 4.22 3.18C4.36667 2.99333 4.55333 2.87333 4.78 2.82ZM6 4.6V13.78C6 14.46 6.15667 15.0933 6.47 15.68C6.78333 16.2667 7.22 16.7467 7.78 17.12L13 20.6L18.22 17.12C18.78 16.7467 19.2167 16.2667 19.53 15.68C19.8433 15.0933 20 14.46 20 13.78V4.6L13 3.04L6 4.6ZM13 11C12.5467 11 12.13 10.8867 11.75 10.66C11.37 10.4333 11.0667 10.13 10.84 9.75C10.6133 9.37 10.5 8.95333 10.5 8.5C10.5 8.04667 10.6133 7.63 10.84 7.25C11.0667 6.87 11.37 6.56667 11.75 6.34C12.13 6.11333 12.5467 6 13 6C13.4533 6 13.87 6.11333 14.25 6.34C14.63 6.56667 14.9333 6.87 15.16 7.25C15.3867 7.63 15.5 8.04667 15.5 8.5C15.5 8.95333 15.3867 9.37 15.16 9.75C14.9333 10.13 14.63 10.4333 14.25 10.66C13.87 10.8867 13.4533 11 13 11ZM8.52 16C8.61333 15.2533 8.86667 14.5767 9.28 13.97C9.69333 13.3633 10.2267 12.8833 10.88 12.53C11.5333 12.1767 12.24 12 13 12C13.76 12 14.4667 12.1767 15.12 12.53C15.7733 12.8833 16.3067 13.3633 16.72 13.97C17.1333 14.5767 17.3867 15.2533 17.48 16H8.52Z" fill="white"/>
+                </svg>
+              </div>
+              <h1 class="login-title">Iniciar Sesión</h1>
+              <p class="login-subtitle">Accede a tu cuenta del Sistema SAGA</p>
+            </div>
+
+            <!-- User Type Toggle -->
+            <div class="user-type-toggle">
+              <button
+                type="button"
+                class="toggle-btn"
+                [class.active]="userType === 'individual'"
+                (click)="selectUserType('individual')">
+                Persona Individual
+              </button>
+              <button
+                type="button"
+                class="toggle-btn"
+                [class.active]="userType === 'juridica'"
+                (click)="selectUserType('juridica')">
+                Persona Jurídica
+              </button>
+            </div>
+
+            <!-- Social Login -->
+            <div class="social-login">
+              <button type="button" class="social-btn" (click)="onGoogleLogin()">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+                  <path d="M3.46844 6.24967C3.92388 5.34968 4.52929 4.55245 5.28465 3.85801C6.04002 3.16356 6.89536 2.62745 7.85068 2.24968C8.82821 1.86079 9.85018 1.66634 10.9166 1.66634C12.0163 1.66634 13.0438 1.86079 13.9991 2.24968C14.9211 2.61634 15.7543 3.14412 16.4985 3.83301L14.0991 6.23301C13.6659 5.8219 13.1799 5.51079 12.6411 5.29967C12.1024 5.08856 11.5275 4.98301 10.9166 4.98301C10.2056 4.98301 9.52804 5.13301 8.88375 5.43301C8.27279 5.7219 7.73682 6.12745 7.27582 6.64968C6.81483 7.1719 6.47324 7.76079 6.25108 8.41634C6.08445 8.93856 6.00114 9.46634 6.00114 9.99967C6.00114 10.533 6.08445 11.0608 6.25108 11.583C6.47324 12.2386 6.81483 12.8275 7.27582 13.3497C7.73682 13.8719 8.27279 14.2775 8.88375 14.5663C9.52804 14.8663 10.2056 15.0163 10.9166 15.0163C12.0052 15.0163 12.9438 14.7497 13.7325 14.2163C14.1769 13.9275 14.5407 13.5663 14.8239 13.133C15.1072 12.6997 15.2988 12.2219 15.3988 11.6997H10.9166V8.48301H18.7646C18.8646 9.03856 18.9146 9.60523 18.9146 10.183C18.9146 11.4386 18.7007 12.5913 18.2731 13.6413C17.8454 14.6913 17.2317 15.583 16.4319 16.3163C15.732 16.9608 14.9211 17.4552 13.9991 17.7997C13.0549 18.1552 12.0274 18.333 10.9166 18.333C9.85018 18.333 8.82821 18.1386 7.85068 17.7497C6.89536 17.3719 6.04002 16.8358 5.28465 16.1413C4.52929 15.4469 3.92388 14.6497 3.46844 13.7497C2.8797 12.5719 2.58533 11.3219 2.58533 9.99967C2.58533 8.67745 2.8797 7.42745 3.46844 6.24967Z" fill="#EF4444"/>
+                </svg>
+                <span>Google</span>
+              </button>
+
+              <button type="button" class="social-btn" (click)="onFacebookLogin()">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <path d="M11.9586 11.2497H14.0414L14.8745 7.91634H11.9586V6.24967C11.9586 5.8719 11.9752 5.59968 12.0086 5.43301C12.0752 5.16634 12.2196 4.96079 12.4418 4.81634C12.7084 4.66079 13.1027 4.58301 13.6248 4.58301H14.8745V1.78301C14.6857 1.76079 14.3858 1.73856 13.9747 1.71634C13.4638 1.68301 12.9694 1.66634 12.4918 1.66634C11.7253 1.66634 11.0505 1.81912 10.4673 2.12468C9.8841 2.43023 9.43699 2.86634 9.12596 3.43301C8.79271 4.04412 8.62608 4.76079 8.62608 5.58301V7.91634H6.12671V11.2497H8.62608V18.333H11.9586V11.2497Z" fill="#2563EB"/>
+                </svg>
+                <span>Facebook</span>
+              </button>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider">
+              <div class="divider-line"></div>
+              <span class="divider-text">O continúa con</span>
+            </div>
+
+            <!-- Login Form -->
+            <form class="login-form" (ngSubmit)="onLogin()">
+              <div class="form-row">
+                <div class="input-group">
+                  <label class="input-label">Correo Electrónico</label>
+                  <div class="input-wrapper">
+                    <div class="input-icon">
+                      <mat-icon class="form-icon" svgIcon="mail"></mat-icon>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-input"
+                      placeholder="ejemplo@correo.com"
+                      [(ngModel)]="email"
+                      name="email"
+                      required>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <label class="input-label">Contraseña</label>
+                  <div class="input-wrapper">
+                    <div class="input-icon">
+                      <mat-icon class="form-icon" svgIcon="lock"></mat-icon>
+                    </div>
+                    <input
+                      [type]="showPassword ? 'text' : 'password'"
+                      class="form-input"
+                      placeholder="Ingresa tu contraseña"
+                      [(ngModel)]="password"
+                      name="password"
+                      required>
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      (click)="togglePasswordVisibility()">
+                      <mat-icon class="form-icon" svgIcon="visibility"></mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <label class="checkbox-label">
+                  <div class="checkbox-wrapper">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="checkbox-icon">
+                      <path d="M11.52 3.2002H4.47995C3.77303 3.2002 3.19995 3.77327 3.19995 4.4802V11.5202C3.19995 12.2271 3.77303 12.8002 4.47995 12.8002H11.52C12.2269 12.8002 12.8 12.2271 12.8 11.5202V4.4802C12.8 3.77327 12.2269 3.2002 11.52 3.2002Z" stroke="#767676" stroke-width="0.64"/>
+                    </svg>
+                    <input
+                      type="checkbox"
+                      class="checkbox-input"
+                      [(ngModel)]="rememberMe"
+                      name="rememberMe">
+                  </div>
+                  <span>Recordarme</span>
+                </label>
+
+                <button type="button" class="forgot-password-btn" (click)="onForgotPassword()">
+                  ¿Olvidaste tu contraseña?
+                </button>
+              </div>
+
+              <button type="submit" class="login-btn">
+                Iniciar Sesión
+              </button>
+            </form>
+
+            <!-- Register Section -->
+            <div class="register-section">
+              <p class="register-text">
+                ¿No tienes una cuenta?
+                <button type="button" class="register-link" (click)="onRegister()">
+                  Regístrate aquí
+                </button>
+              </p>
+
+              <div class="support-links">
+                <button type="button" class="support-btn" (click)="onTechnicalSupport()">
+                  Soporte Técnico
+                </button>
+                <span class="separator">|</span>
+                <button type="button" class="support-btn" (click)="onUserManual()">
+                  Manual de Usuario
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+</div>

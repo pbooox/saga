@@ -24,7 +24,7 @@
 
       <!-- Auth Buttons -->
       <div class="auth-buttons">
-        <button class="btn btn-outline">Iniciar Sesión</button>
+        <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">Iniciar Sesión</a>
         <button class="btn btn-primary">Regístrate</button>
       </div>
     </div>
@@ -45,9 +45,9 @@
           >
         </nav>
         <div class="mobile-auth-buttons">
-          <button class="btn btn-outline" (click)="toggleMobileMenu()">
+          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">
             Iniciar Sesión
-          </button>
+          </a>
           <button class="btn btn-primary" (click)="toggleMobileMenu()">
             Regístrate
           </button>

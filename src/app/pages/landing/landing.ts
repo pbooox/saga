@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
-import { Header } from "../../components/header/header";
-import { Footer } from "../../components/footer/footer";
+import { Header } from "../../components/web/header/header";
+import { Footer } from "../../components/web/footer/footer";
 
 @Component({
   selector: "app-landing",
