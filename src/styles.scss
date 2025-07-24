@@ -3,8 +3,8 @@
 // Import Angular Material theme (debe estar antes que @import)
 @use "@angular/material" as mat;
 
-// Import Tailwind CSS v4
-@import "tailwindcss/tailwind.css";
+// Import Tailwind CSS v4 - comentado temporalmente
+// @import "tailwindcss/tailwind.css";
 
 // Angular Material core
 @include mat.core();
