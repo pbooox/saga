@@ -78,16 +78,7 @@
   padding: 4rem 0;
   background: white;
 
-  .process-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-  }
+  // process-grid layout migrado a Tailwind
 
   .process-step {
     padding: 2rem;
