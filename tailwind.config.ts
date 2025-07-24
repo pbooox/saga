@@ -1,7 +1,10 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./src/**/*.{html,ts}'],
+  content: [
+    './src/**/*.{html,ts}',
+    './src/**/*.{component,directive,pipe}.html'
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,7 +16,10 @@ export default {
         'text-secondary': '#475569',
         'text-muted': '#334155',
         'border-color': '#e5e7eb',
-      }
+      },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+      },
     },
   },
   plugins: [],
