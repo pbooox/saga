@@ -19,26 +19,13 @@
     padding: 4rem 0;
   }
 
+  // Grid y content layout ahora con Tailwind
   .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-
-    @media (min-width: 1024px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
+    // Backup styles solo por compatibilidad
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    @media (min-width: 1024px) {
-      padding-right: 3rem;
-    }
+    // Layout migrado a Tailwind - mantenemos solo estilos específicos
   }
 
   .hero-title {
