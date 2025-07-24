@@ -23,10 +23,12 @@
       </nav>
 
       <!-- Auth Buttons -->
-      <div class="auth-buttons">
-        <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">Iniciar Sesión</a>
-        <button class="btn btn-primary">Regístrate</button>
-      </div>
+      @if (!isMobile()) {
+        <div class="auth-buttons">
+          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">Iniciar Sesión</a>
+          <button class="btn btn-primary">Regístrate</button>
+        </div>
+      }
     </div>
 
     <!-- Mobile Navigation Sidebar -->

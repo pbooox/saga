@@ -1,7 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
+  signal,
   DOCUMENT,
 } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
@@ -19,6 +21,15 @@ import {RouterLink} from '@angular/router';
 export class Header {
   private document = inject(DOCUMENT);
   isMobileMenuOpen = false;
+
+  isMobile = signal(window.innerWidth < 768);
+
+  resizeEffect = effect(() => {
+    const update = () => {
+      this.isMobile.set(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', update);
+  });
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
