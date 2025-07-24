@@ -12,7 +12,10 @@
         <img
           ngSrc="/assets/images/web/logotipo.png"
           alt="Logo"
-          height="500" width="1594"/>
+          height="500"
+          width="1594"
+          priority
+        />
       </div>
 
       <!-- Desktop Navigation -->
@@ -24,10 +27,15 @@
 
       <!-- Auth Buttons -->
       @if (!isMobile()) {
-        <div class="auth-buttons">
-          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">Iniciar Sesión</a>
-          <button class="btn btn-primary">Regístrate</button>
-        </div>
+      <div class="auth-buttons">
+        <a
+          routerLink="/login"
+          class="btn btn-outline"
+          (click)="onNavigateAndClose()"
+          >Iniciar Sesión</a
+        >
+        <button class="btn btn-primary">Regístrate</button>
+      </div>
       }
     </div>
 
@@ -47,7 +55,11 @@
           >
         </nav>
         <div class="mobile-auth-buttons">
-          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">
+          <a
+            routerLink="/login"
+            class="btn btn-outline"
+            (click)="onNavigateAndClose()"
+          >
             Iniciar Sesión
           </a>
           <button class="btn btn-primary" (click)="toggleMobileMenu()">
