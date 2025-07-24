@@ -4,7 +4,7 @@
 @use "@angular/material" as mat;
 
 // Import Tailwind CSS v4
-@import "tailwindcss";
+@import "tailwindcss/tailwind.css";
 
 // Angular Material core
 @include mat.core();
