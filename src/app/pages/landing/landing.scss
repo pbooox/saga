@@ -64,40 +64,9 @@
   }
 
   .stats-grid {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2rem;
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .stat-number {
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 2.5rem;
-      text-align: center;
-
-      &.primary {
-        color: var(--primary-color, #059669);
-      }
-
-      &.warning {
-        color: #f59e0b;
-      }
-
-      &.success {
-        color: #0d9488;
-      }
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: var(--text-secondary, #475569);
-      text-align: center;
-      line-height: 20px;
+    // Layout migrado a Tailwind - mantener solo colores personalizados
+    .stat-number.primary {
+      color: var(--primary-color, #059669);
     }
   }
 
