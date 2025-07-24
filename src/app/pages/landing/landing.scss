@@ -156,31 +156,10 @@
 .benefits-section {
   padding: 4rem 0;
 
-  .benefits-grid {
-    background: var(--gray-50, #f9fafb);
-    border-radius: 15px;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-  }
+  // benefits-grid layout migrado a Tailwind
 
   .benefit-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+    // Layout migrado a Tailwind - mantener solo estilos específicos
 
     .icon-container.benefit-icon {
       width: 76px;
