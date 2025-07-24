@@ -10,9 +10,9 @@
       <!-- Logo -->
       <div class="logo">
         <img
-          src="https://api.builder.io/api/v1/image/assets/TEMP/0bb4f4fbe529063d2b85d631aeef1c50b0453199?width=306"
+          ngSrc="/assets/images/web/logotipo.png"
           alt="Logo"
-        />
+          height="500" width="1594"/>
       </div>
 
       <!-- Desktop Navigation -->
@@ -23,10 +23,12 @@
       </nav>
 
       <!-- Auth Buttons -->
-      <div class="auth-buttons">
-        <button class="btn btn-outline">Iniciar Sesión</button>
-        <button class="btn btn-primary">Regístrate</button>
-      </div>
+      @if (!isMobile()) {
+        <div class="auth-buttons">
+          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">Iniciar Sesión</a>
+          <button class="btn btn-primary">Regístrate</button>
+        </div>
+      }
     </div>
 
     <!-- Mobile Navigation Sidebar -->
@@ -45,9 +47,9 @@
           >
         </nav>
         <div class="mobile-auth-buttons">
-          <button class="btn btn-outline" (click)="toggleMobileMenu()">
+          <a routerLink="/login" class="btn btn-outline" (click)="onNavigateAndClose()">
             Iniciar Sesión
-          </button>
+          </a>
           <button class="btn btn-primary" (click)="toggleMobileMenu()">
             Regístrate
           </button>

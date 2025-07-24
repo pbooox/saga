@@ -1,15 +1,19 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
+  signal,
   DOCUMENT,
 } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import {NgOptimizedImage} from '@angular/common';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, NgOptimizedImage, RouterLink],
   templateUrl: "./header.html",
   styleUrls: ["./header.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,6 +21,15 @@ import { MatIconModule } from "@angular/material/icon";
 export class Header {
   private document = inject(DOCUMENT);
   isMobileMenuOpen = false;
+
+  isMobile = signal(window.innerWidth < 768);
+
+  resizeEffect = effect(() => {
+    const update = () => {
+      this.isMobile.set(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', update);
+  });
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -26,5 +39,9 @@ export class Header {
     } else {
       this.document.body.classList.remove("mobile-menu-open");
     }
+  }
+
+  onNavigateAndClose(): void {
+    this.toggleMobileMenu();
   }
 }
