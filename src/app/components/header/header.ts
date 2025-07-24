@@ -5,11 +5,12 @@ import {
   DOCUMENT,
 } from "@angular/core";
 import { MatIconModule } from "@angular/material/icon";
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [MatIconModule],
+  imports: [MatIconModule, NgOptimizedImage],
   templateUrl: "./header.html",
   styleUrls: ["./header.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
