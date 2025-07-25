@@ -226,10 +226,7 @@
   }
 
   .benefits-section {
-    .benefits-grid {
-      padding: 2rem;
-      gap: 2rem;
-    }
+    // padding and gap now handled by Tailwind classes
   }
 }
 
