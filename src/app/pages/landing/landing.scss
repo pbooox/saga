@@ -19,26 +19,13 @@
     padding: 4rem 0;
   }
 
+  // Grid y content layout ahora con Tailwind
   .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-
-    @media (min-width: 1024px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
+    // Backup styles solo por compatibilidad
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    @media (min-width: 1024px) {
-      padding-right: 3rem;
-    }
+    // Layout migrado a Tailwind - mantenemos solo estilos específicos
   }
 
   .hero-title {
@@ -77,55 +64,13 @@
   }
 
   .stats-grid {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2rem;
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .stat-number {
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 2.5rem;
-      text-align: center;
-
-      &.primary {
-        color: var(--primary-color, #059669);
-      }
-
-      &.warning {
-        color: #f59e0b;
-      }
-
-      &.success {
-        color: #0d9488;
-      }
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: var(--text-secondary, #475569);
-      text-align: center;
-      line-height: 20px;
+    // Layout migrado a Tailwind - mantener solo colores personalizados
+    .stat-number.primary {
+      color: var(--primary-color, #059669);
     }
   }
 
-  .hero-image {
-    display: flex;
-    justify-content: center;
-
-    .dashboard-image {
-      width: 100%;
-      max-width: 576px;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-  }
+  // hero-image y dashboard-image migrados completamente a Tailwind
 }
 
 // Process section
@@ -133,16 +78,7 @@
   padding: 4rem 0;
   background: white;
 
-  .process-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-  }
+  // process-grid layout migrado a Tailwind
 
   .process-step {
     padding: 2rem;
@@ -220,31 +156,10 @@
 .benefits-section {
   padding: 4rem 0;
 
-  .benefits-grid {
-    background: var(--gray-50, #f9fafb);
-    border-radius: 15px;
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-  }
+  // benefits-grid layout migrado a Tailwind
 
   .benefit-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+    // Layout migrado a Tailwind - mantener solo estilos específicos
 
     .icon-container.benefit-icon {
       width: 76px;
