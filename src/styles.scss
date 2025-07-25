@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Import Angular Material theme
+// Import Angular Material theme (debe estar antes que @import)
 @use "@angular/material" as mat;
+
+// Import Tailwind CSS v4
+@use "tailwindcss";
+
+// Angular Material core
 @include mat.core();
 
 // Import Google Fonts and Material Icons
