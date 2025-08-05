@@ -2,12 +2,14 @@
 
 // Import Angular Material theme (debe estar antes que @import)
 @use "@angular/material" as mat;
-
+@use "components/forms" as forms;
+@use "components/icons" as icons;
 // Import Tailwind CSS v4
 @use "tailwindcss";
 
 // Angular Material core
 @include mat.core();
+
 
 // Import Google Fonts and Material Icons
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
@@ -16,6 +18,7 @@
 // ========================================
 // GLOBAL VARIABLES
 // ========================================
+
 
 // Color Variables
 $primary-color: #059669;
@@ -182,6 +185,64 @@ img {
   }
 }
 
+.social-signin {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  .social-btn {
+    display: flex;
+    width: calc(50% - 6px);
+    padding: 14px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    span {
+      color: #334155;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+
+  .divider-line {
+    width: 100%;
+    height: 1px;
+    background: #cbd5e1;
+  }
+
+  .divider-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 8px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+
 // Badge Components
 .badge {
   display: inline-flex;
@@ -248,53 +309,9 @@ img {
   background: white;
   border-radius: 15px;
   box-shadow:
-    0px 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
+    0 9.266px 13.899px -2.78px rgba(0, 0, 0, 0.1),
     0px 3.707px 5.56px -3.707px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-}
-
-// Icon Components
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-
-  &.icon-blue {
-    background: #eff6ff;
-
-    mat-icon,
-    svg {
-      color: #2563eb;
-    }
-  }
-
-  &.icon-green {
-    background: #ecfdf5;
-
-    mat-icon,
-    svg {
-      color: #16a34a;
-    }
-  }
-
-  &.icon-purple {
-    background: #f3e8ff;
-
-    mat-icon,
-    svg {
-      color: #9333ea;
-    }
-  }
-
-  &.icon-orange {
-    background: #fff7ed;
-
-    mat-icon,
-    svg {
-      color: #ea580c;
-    }
-  }
 }
 
 // ========================================
@@ -338,3 +355,4 @@ mat-icon {
   align-items: center;
   justify-content: center;
 }
+
