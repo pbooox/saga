@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from '../../components/web/header/header.component';
+import { FooterComponent } from '../../components/web/footer/footer.component';
 
 @Component({
   selector: 'app-tramites',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule, RouterModule],
+  imports: [CommonModule, FormsModule, MatIconModule, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './tramites.component.html',
   styleUrl: './tramites.component.scss'
 })
