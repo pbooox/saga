@@ -1,28 +1,28 @@
-import { Routes } from '@angular/router';
-import {InicioComponent} from './pages/inicio/inicio.component';
-import {LoginComponent} from './pages/login/login.component';
-import {RegistroComponent} from './pages/registro/registro.component';
-import {TramitesComponent} from './pages/tramites/tramites.component';
+import { Routes } from "@angular/router";
+import { InicioComponent } from "./pages/inicio/inicio.component";
+import { LoginComponent } from "./pages/login/login.component";
+import { RegistroComponent } from "./pages/registro/registro.component";
+import { TramitesComponent } from "./pages/tramites/tramites.component";
 
 export const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: InicioComponent,
-    pathMatch: 'full'
+    pathMatch: "full",
   },
   {
-    path: 'login',
+    path: "login",
     component: LoginComponent,
-    pathMatch: 'full'
+    pathMatch: "full",
   },
   {
-    path: 'registro',
+    path: "registro",
     component: RegistroComponent,
-    pathMatch: 'full'
+    pathMatch: "full",
   },
   {
-    path: 'tramites',
+    path: "tramites",
     component: TramitesComponent,
-    pathMatch: 'full'
-  }
+    pathMatch: "full",
+  },
 ];

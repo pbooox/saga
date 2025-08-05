@@ -5,7 +5,11 @@
     <div class="h-16 flex items-center justify-between gap-4">
       <!-- Mobile Menu Button -->
       <!-- HeaderComponent -->
-      <button class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 lg:hidden" aria-label="Abrir menú" (click)="toggleMobileMenu()">
+      <button
+        class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 lg:hidden"
+        aria-label="Abrir menú"
+        (click)="toggleMobileMenu()"
+      >
         <mat-icon>menu</mat-icon>
       </button>
 
@@ -22,24 +26,36 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8">
-        <a routerLink="/" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Inicio</a>
-        <a routerLink="/tramites" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Trámites</a>
-        <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">Seguimiento de Trámite</a>
+        <a
+          routerLink="/"
+          class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+          >Inicio</a
+        >
+        <a
+          routerLink="/tramites"
+          class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+          >Trámites</a
+        >
+        <a
+          href="#"
+          class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+          >Seguimiento de Trámite</a
+        >
       </nav>
 
       <!-- Auth Buttons -->
       @if (!isMobile()) {
-      <div class="hidden lg:flex items-center gap-3">
-        <button
-          routerLink="/login"
-          class="btn btn-outline"
-          >Iniciar Sesión
-        </button>
-        <button
-          routerLink="/registro"
-          class="btn btn-primary inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >Regístrate</button>
-      </div>
+        <div class="hidden lg:flex items-center gap-3">
+          <button routerLink="/login" class="btn btn-outline">
+            Iniciar Sesión
+          </button>
+          <button
+            routerLink="/registro"
+            class="btn btn-primary inline-flex items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Regístrate
+          </button>
+        </div>
       }
     </div>
 
@@ -51,7 +67,11 @@
       [class.pointer-events-none]="!isMobileMenuOpen"
       (click)="isMobileMenuOpen = false"
     >
-      <div class="absolute inset-0 bg-black/40 transition-opacity" [class.opacity-0]="!isMobileMenuOpen" [class.opacity-100]="isMobileMenuOpen"></div>
+      <div
+        class="absolute inset-0 bg-black/40 transition-opacity"
+        [class.opacity-0]="!isMobileMenuOpen"
+        [class.opacity-100]="isMobileMenuOpen"
+      ></div>
       <div
         class="absolute inset-y-0 left-0 w-80 max-w-full bg-white shadow-xl transform transition-transform flex h-full flex-col z-50"
         [class.-translate-x-full]="!isMobileMenuOpen"
@@ -66,7 +86,10 @@
           <a routerLink="/" class="mobile-nav-link" (click)="toggleMobileMenu()"
             >Inicio</a
           >
-          <a routerLink="/tramites" class="mobile-nav-link" (click)="toggleMobileMenu()"
+          <a
+            routerLink="/tramites"
+            class="mobile-nav-link"
+            (click)="toggleMobileMenu()"
             >Trámites</a
           >
           <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()"
