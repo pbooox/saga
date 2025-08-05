@@ -1,0 +1,134 @@
+<!-- Main Container -->
+<div class="landing-container">
+  <!-- HeaderComponent Component -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="signin-main">
+    <div class="signin-container">
+      <div class="signin-card">
+        <div class="signin-content">
+          <!-- Left Panel -->
+          <div class="left-panel">
+            <div class="background-overlay"></div>
+            <div class="decorative-circle circle-top"></div>
+            <div class="decorative-circle circle-bottom"></div>
+
+            <div class="relative flex flex-col justify-center bg-gradient-to-br rounded-2x1 text-white p-10 overflow-hidden">
+              <div class="mb-10">
+                <img
+                  ngSrc="/assets/images/web/logotipoBlanco.png"
+                  alt="Logo"
+                  height="500"
+                  width="1594"
+                  priority
+                />
+              </div>
+
+              <div class="welcome-card">
+                <h2 class="text-lg font-extrabold text-white">¡Únete al Sistema SAGA!</h2>
+                <p class="text-base text-white/80">
+                  Regístrate en el Sistema de Administración y Gestión Ambiental para acceder
+                  a todos los servicios del MARN
+                </p>
+
+                <div class="space-y-4">
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <mat-icon class="align-middle flex-shrink-0 text-white">check_small</mat-icon>
+                    </div>
+                    <span>Registro rápido y seguro</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <mat-icon class="align-middle flex-shrink-0 text-white">check_small</mat-icon>
+                    </div>
+                    <span>Accesso inmediato a servicios</span>
+                  </div>
+
+                  <div class="feature-item">
+                    <div class="check-icon">
+                      <mat-icon class="align-middle flex-shrink-0 text-white">check_small</mat-icon>
+                    </div>
+                    <span>Gestión completa de trámites</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel -->
+          <div class="right-panel">
+            <div class="flex flex-col items-center mb-6">
+              <div class="add-user-icon">
+                <mat-icon class="align-middle flex-shrink-0 text-white">person_add</mat-icon>
+              </div>
+              <h1 class="text-xl font-semibold">Regístrate</h1>
+              <p class="text-m">Crea tu cuenta en el Sistema SAGA</p>
+            </div>
+
+            <!-- User Type Toggle -->
+            <div class="user-type-toggle">
+              <button
+                type="button"
+                class="toggle-btn"
+                [class.active]="tipoUsuario() === 'individual'"
+                (click)="seleccionarTipoUsuario('individual')"
+              >
+                Persona Individual
+              </button>
+              <button
+                type="button"
+                class="toggle-btn"
+                [class.active]="tipoUsuario() === 'juridica'"
+                (click)="seleccionarTipoUsuario('juridica')"
+              >
+                Persona Jurídica
+              </button>
+            </div>
+            @if(tipoUsuario()==='individual') {
+              <app-individual-on-boarding-form/>
+            } @else {
+              <app-juridico-on-boarding-form/>
+            }
+            <!-- Register Section -->
+            <div class="register-section">
+              <p class="register-text">
+                ¿Ya tienes cuenta?
+                <button
+                  type="button"
+                  class="register-link"
+                  routerLink="/login"
+                >
+                  Inicia sesión
+                </button>
+              </p>
+
+              <div class="support-links">
+                <button
+                  type="button"
+                  class="support-btn"
+                  (click)="soporteTecnico()"
+                >
+                  Soporte Técnico
+                </button>
+                <span class="separator">|</span>
+                <button
+                  type="button"
+                  class="support-btn"
+                  (click)="verManualUsuario()"
+                >
+                  Manual de Usuario
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FooterComponent Component -->
+  <app-footer></app-footer>
+</div>

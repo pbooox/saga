@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.config.ts">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.config.ts" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.config" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.html">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.html" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.routes.ts">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.routes.ts" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.routes" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.spec.ts">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.spec.ts" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.spec" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.ts">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app.ts" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/app/app" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/main.ts">
+<testcase time="0" name="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/main.ts" classname="/Users/josiastacam/Desktop/PRONACOM/frontend-marn/src/main" />
+</testsuite>
+</testsuites>

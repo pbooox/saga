@@ -1,0 +1,51 @@
+// Icon Components
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.icon-blue {
+  background: #eff6ff;
+
+  mat-icon,
+  svg {
+    color: #2563eb;
+  }
+}
+
+.icon-green {
+  background: #ecfdf5;
+
+  mat-icon,
+  svg {
+    color: #16a34a;
+  }
+}
+
+.icon-purple {
+  background: #f3e8ff;
+
+  mat-icon,
+  svg {
+    color: #9333ea;
+  }
+}
+
+.icon-orange {
+  background: #fff7ed;
+
+  mat-icon,
+  svg {
+    color: #ea580c;
+  }
+}
+
+.icon-gray {
+  mat-icon,
+  svg {
+    color: #94A3B8;
+  }
+}
