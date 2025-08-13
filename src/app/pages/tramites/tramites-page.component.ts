@@ -70,7 +70,6 @@ export class TramitesPageComponent {
       categoria: "ambiental",
       ministerio: "marn",
       duracion: "45-90 días",
-      isBeta: true,
       link: "/tramites-beta"
     },
     {
