@@ -30,6 +30,11 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'tramites-beta',
+    component: TramitesBetaPageComponent,
+    pathMatch: 'full'
+  },
+  {
     path: 'confirmar',
     component: VerificacionTokenPageComponent,
     pathMatch: 'full'
