@@ -89,9 +89,9 @@
                   @for (step of formSteps; track step.numero) {
                     <div class="flex items-start">
                       <div class="flex-shrink-0">
-                        <div [class]="step.estado === 'active' ? 
-                                     'w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold' :
-                                     'w-10 h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center text-sm font-bold'">
+                        <div [class]="step.estado === 'active' ?
+                                     'flex size-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white' :
+                                     'flex size-10 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-600'">
                           {{ step.numero }}
                         </div>
                       </div>
