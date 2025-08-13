@@ -1,0 +1,87 @@
+// Custom scrollbar for sidebar
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(209, 213, 219) transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: rgb(209, 213, 219);
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(156, 163, 175);
+}
+
+// Responsive design improvements
+@media (max-width: 1024px) {
+  .sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .flex.gap-8 {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .w-80 {
+    width: 100%;
+  }
+  
+  .max-h-\[819px\] {
+    max-height: none;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Animation for step transitions
+.step-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.step-item:hover {
+  transform: translateX(2px);
+}
+
+// Button hover effects
+button[type="button"]:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button[type="button"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+// Form validation styling
+.form-field.error {
+  border-color: #ef4444;
+}
+
+.form-field.error:focus {
+  ring-color: #ef4444;
+  border-color: #ef4444;
+}
+
+// Custom focus states for better accessibility
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
