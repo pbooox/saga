@@ -3,6 +3,7 @@ import {InicioPageComponent} from './pages/inicio/inicio-page.component';
 import {LoginPageComponent} from './pages/login/login-page.component';
 import {RegistroPageComponent} from './pages/registro/registro-page.component';
 import {TramitesPageComponent} from './pages/tramites/tramites-page.component';
+import {TramitesBetaPageComponent} from './pages/tramites-beta/tramites-beta-page.component';
 import { UnauthenticatedGuard } from './core/auth/guards/unauthenticated.guard';
 import { VerificacionTokenPageComponent } from './pages/verificacion-token/verificacion-token-page.component';
 
