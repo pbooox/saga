@@ -1,11 +1,11 @@
-import {Component, computed, signal} from "@angular/core";
+import { Component, computed, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { HeaderComponent } from "../../components/shared/header/header.component";
 import { FooterComponent } from "../../components/shared/footer/footer.component";
-import { TramiteCardComponent } from '../../components/pages/tramites/tramite-card/tramite-card.component';
+import { TramiteCardComponent } from "../../components/pages/tramites/tramite-card/tramite-card.component";
 
 @Component({
   selector: "app-tramites",
@@ -22,23 +22,23 @@ import { TramiteCardComponent } from '../../components/pages/tramites/tramite-ca
   styleUrl: "./tramites-page.component.scss",
 })
 export class TramitesPageComponent {
-  busqueda = signal('');
-  categoriaSeleccionada = signal('');
+  busqueda = signal("");
+  categoriaSeleccionada = signal("");
 
   categorias = signal([
     {
       id: "ambiental",
-      name: "Ambiental"
+      name: "Ambiental",
     },
     {
       id: "construccion",
-      name: "Construcción"
+      name: "Construcción",
     },
     { id: "salud", name: "Salud" },
     { id: "agricola", name: "Agrícola" },
     {
       id: "economico",
-      name: "Económico"
+      name: "Económico",
     },
   ]);
 
@@ -62,6 +62,16 @@ export class TramitesPageComponent {
   ]);
 
   tramites = signal([
+    {
+      id: 0,
+      titulo: "Formulario Instrumento Ambiental Bajo Impacto (FIABI)",
+      descripcion:
+        "Complete el proceso de evaluación ambiental para proyectos de bajo impacto de manera digital y eficiente.",
+      categoria: "ambiental",
+      ministerio: "marn",
+      duracion: "45-90 días",
+      link: "/tramites-beta",
+    },
     {
       id: 1,
       titulo: "Licencia Ambiental para Proyectos Industriales",
@@ -136,7 +146,7 @@ export class TramitesPageComponent {
     },
   ]);
 
-  tramitesFiltrados = computed(() =>{
+  tramitesFiltrados = computed(() => {
     return this.tramites().filter((tramite) => {
       const busquedaEncontrada =
         tramite.titulo.toLowerCase().includes(this.busqueda().toLowerCase()) ||
@@ -144,11 +154,12 @@ export class TramitesPageComponent {
           .toLowerCase()
           .includes(this.busqueda().toLowerCase());
       const busquedaCategoria =
-        !this.categoriaSeleccionada() || tramite.categoria === this.categoriaSeleccionada();
+        !this.categoriaSeleccionada() ||
+        tramite.categoria === this.categoriaSeleccionada();
 
       return busquedaEncontrada && busquedaCategoria;
     });
-  })
+  });
 
   clearFilters() {
     this.busqueda.set("");
