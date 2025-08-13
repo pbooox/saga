@@ -21,31 +21,34 @@
   background-color: rgb(156, 163, 175);
 }
 
-// Responsive design improvements
-@media (max-width: 1024px) {
+// Responsive design improvements using modern CSS
+@container (max-width: 1024px) {
   .sticky {
     position: relative !important;
     top: auto !important;
   }
 }
 
+// Use modern Flexbox and Grid responsiveness
 @media (max-width: 768px) {
   .flex.gap-8 {
     flex-direction: column;
     gap: 2rem;
   }
-  
+
   .w-80 {
     width: 100%;
   }
-  
+
   .max-h-\[819px\] {
     max-height: none;
   }
-  
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
+}
+
+// Modern aspect ratio and sizing
+.hero-section {
+  aspect-ratio: 16 / 9;
+  min-height: 525px;
 }
 
 // Animation for step transitions
