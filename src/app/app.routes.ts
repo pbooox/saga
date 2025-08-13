@@ -1,22 +1,36 @@
 import { Routes } from '@angular/router';
-import {InicioComponent} from './pages/inicio/inicio.component';
-import {LoginComponent} from './pages/login/login.component';
-import {RegistroComponent} from './pages/registro/registro.component';
+import {InicioPageComponent} from './pages/inicio/inicio-page.component';
+import {LoginPageComponent} from './pages/login/login-page.component';
+import {RegistroPageComponent} from './pages/registro/registro-page.component';
+import {TramitesPageComponent} from './pages/tramites/tramites-page.component';
+import { UnauthenticatedGuard } from './core/auth/guards/unauthenticated.guard';
+import { VerificacionTokenPageComponent } from './pages/verificacion-token/verificacion-token-page.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: InicioComponent,
+    component: InicioPageComponent,
     pathMatch: 'full'
   },
   {
     path: 'login',
-    component: LoginComponent,
-    pathMatch: 'full'
+    component: LoginPageComponent,
+    pathMatch: 'full',
+    canMatch: [UnauthenticatedGuard]
   },
   {
     path: 'registro',
-    component: RegistroComponent,
+    component: RegistroPageComponent,
     pathMatch: 'full'
-  }
+  },
+  {
+    path: 'tramites',
+    component: TramitesPageComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'confirmar',
+    component: VerificacionTokenPageComponent,
+    pathMatch: 'full'
+  },
 ];

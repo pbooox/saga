@@ -1,0 +1,121 @@
+<!-- Main Container -->
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-teal-50 to-cyan-50">
+  <!-- Header Component -->
+  <app-header></app-header>
+
+  <!-- Main Content -->
+  <main class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <!-- Page Header -->
+      <div class="text-center mb-12">
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+          Catálogo de Tramites <span class="highlight">Ambientales</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Encuentra y gestiona todos los trámites ambientales disponibles en el Sistema SAGA
+        </p>
+      </div>
+
+      <!-- Search and Filters -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+        <!-- Search & Category in pill container -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- Search input -->
+          <div class="relative flex-1">
+            <label for="search" class="sr-only">Buscar trámite</label>
+            <mat-icon class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+              >search</mat-icon
+            >
+            <input
+              id="search"
+              type="text"
+              [(ngModel)]="busqueda"
+              placeholder="Buscar trámites..."
+              class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+            />
+          </div>
+
+          <!-- Category select -->
+          <div class="min-w-[220px]">
+            <select
+              [(ngModel)]="categoriaSeleccionada"
+              class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-200 text-gray-800 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+            >
+              <option value="">Todos los trámites ({{ tramitesFiltrados().length }})</option>
+              @for (categoria of categorias(); track categoria.id) {
+                <option [value]="categoria.id">{{ categoria.name }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Counter -->
+      <div class="mb-6">
+        <p class="text-gray-600">
+          Mostrando
+          <span class="font-semibold">{{ tramitesFiltrados().length }}</span>
+          {{ tramitesFiltrados().length === 1 ? "trámite" : "trámites" }}
+        </p>
+      </div>
+
+      <!-- Tramites Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        @for (tramite of tramitesFiltrados(); track tramite.id) {
+          <app-tramite-card [tramite]="tramite"></app-tramite-card>
+        }
+      </div>
+
+      <!-- Empty State -->
+      @if(tramitesFiltrados().length === 0) {
+        <div class="text-center py-12">
+          <div class="max-w-md mx-auto">
+            <mat-icon class="text-6xl text-gray-300 mb-4">search_off</mat-icon>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              No se encontraron trámites
+            </h3>
+            <p class="text-gray-600 mb-4">
+              No hemos encontrado trámites que coincidan con tus criterios de
+              búsqueda.
+            </p>
+            <button
+              (click)="clearFilters()"
+              class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors"
+            >
+              <mat-icon class="text-sm">refresh</mat-icon>
+              Limpiar filtros
+            </button>
+          </div>
+        </div>
+      }
+
+      <!-- Help Section -->
+      <div
+        class="mt-16 rounded-2xl p-8 text-white text-center gradient-ayuda"
+      >
+        <h2 class="text-2xl font-bold mb-4">¿Necesitas ayuda con tu trámite?</h2>
+        <p class="text-teal-100 mb-6 max-w-2xl mx-auto">
+          Nuestro equipo de soporte está disponible para guiarte en todo el proceso
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="btn btn-help-primary flex items-center justify-center"
+          >
+            Contactar Soporte
+          </button>
+          <button
+            class="btn btn-help-outline flex items-center justify-center"
+          >
+            Ver Guías
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+</div>

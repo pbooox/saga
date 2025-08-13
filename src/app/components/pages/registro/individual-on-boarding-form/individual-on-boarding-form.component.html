@@ -1,0 +1,241 @@
+<section>
+  <div class="social-signin">
+    <button
+      type="button"
+      class="social-btn"
+      (click)="accederConGoogle()"
+    >
+      <fa-icon class="text-red-600" [icon]="faGoogle"></fa-icon>
+      <span>Google</span>
+    </button>
+
+    <button
+      type="button"
+      class="social-btn"
+      (click)="accederConFacebook()"
+    >
+      <fa-icon class="text-blue-600" [icon]="faFacebook"></fa-icon>
+      <span>Facebook</span>
+    </button>
+  </div>
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-text">O registrate manualmente</span>
+  </div>
+  <form class="flex flex-col gap-2" [formGroup]="registroIndividualForm" (ngSubmit)="enviarRegistro()">
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div class="flex flex-col">
+      <label class="input-label" for="nombre">Nombres</label>
+      <div class="input-wrapper w-full">
+        <input
+          id="nombres"
+          type="text"
+          class="form-input w-full"
+          placeholder="Tus nombres"
+          name="nombres"
+          formControlName="nombres"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'nombres') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm, 'nombres') }}
+          </span>
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label class="input-label" for="apellidos">Apellidos</label>
+      <div class="input-wrapper w-full">
+        <input
+          id="apellidos"
+          type="text"
+          class="form-input w-full"
+          placeholder="Tus apellidos"
+          name="apellidos"
+          formControlName="apellidos"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'apellidos') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm, 'apellidos') }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div class="flex flex-col">
+      <label class="input-label" for="correo">Correo Electrónico</label>
+      <div class="input-wrapper w-full">
+        <input
+          id="correo"
+          type="email"
+          class="form-input w-full"
+          placeholder="ejemplo@correo.com"
+          name="correo"
+          formControlName="correo"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'correo') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm, 'correo') }}
+          </span>
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label class="input-label" for="telefono">Teléfono</label>
+      <div class="input-wrapper w-full">
+        <input
+          id="telefono"
+          type="text"
+          class="form-input w-full"
+          placeholder="5555-5555"
+          name="telefono"
+          formControlName="telefono"
+          (input)="onTelefonoInput($event)"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'telefono') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm, 'telefono') }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div class="flex flex-col">
+      <label class="input-label" for="cui">CUI</label>
+      <div class="input-wrapper">
+        <input
+          id="cui"
+          type="text"
+          class="form-input"
+          placeholder="1234567891012"
+          name="cui"
+          formControlName="cui"
+          maxlength="13"
+          (input)="onCuiInput($event)"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'cui') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm,  'cui') }}
+          </span>
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col">
+      <label class="input-label" for="nit">NIT</label>
+      <div class="input-wrapper">
+        <input
+          id="nit"
+          type="text"
+          class="form-input"
+          placeholder="123456789101"
+          name="nit"
+          formControlName="nit"
+        />
+        @if( formUtils.esCampoValido(registroIndividualForm, 'nit') ){
+          <span class="text-xs text-red-500">
+            {{ formUtils.obtenerCampoError(registroIndividualForm, 'nit') }}
+          </span>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-2">
+  <div class="flex flex-col">
+    <label class="input-label" for="contrasena">Contraseña</label>
+    <div class="input-wrapper">
+      <input
+        id="contrasena"
+        [type]="verClave() ? 'text' : 'password'"
+        class="form-input-password"
+        placeholder="Tu contraseña"
+        name="contrasena"
+        formControlName="contrasena"
+      />
+      <button
+        type="button"
+        class="password-toggle icon-gray"
+        (click)="alternarVisibilidadClave()"
+      >
+        <mat-icon
+          class="form-icon"
+        >visibility</mat-icon>
+      </button>
+    </div>
+    @if( formUtils.esCampoValido(registroIndividualForm, 'contrasena') ){
+      <span class="text-xs text-red-500">
+        {{ formUtils.obtenerCampoError(registroIndividualForm, 'contrasena') }}
+      </span>
+    }
+  </div>
+
+  <div class="flex flex-col">
+    <label class="input-label" for="confirmContrasena">Confirmar Contraseña</label>
+    <div class="input-wrapper">
+      <input
+        id="confirmContrasena"
+        [type]="verConfirmarClave() ? 'text' : 'password'"
+        class="form-input-password"
+        placeholder="Repetir contraseña"
+        name="confirmContrasena"
+        formControlName="confirmContrasena"
+      />
+      <button
+        type="button"
+        class="password-toggle icon-gray"
+        (click)="alternarVisibilidadConfirmarClave()"
+      >
+        <mat-icon
+          class="form-icon"
+        >visibility</mat-icon>
+      </button>
+    </div>
+    @if( formUtils.esCampoValido(registroIndividualForm, 'confirmContrasena') ){
+      <span class="text-xs text-red-500">
+        {{ formUtils.obtenerCampoError(registroIndividualForm, 'confirmContrasena') }}
+      </span>
+    }
+    @if( registroIndividualForm.hasError('noEsIgual')
+          && registroIndividualForm.get('confirmContrasena')?.touched ) {
+      <span class="text-xs text-red-500">
+        Las contraseñas no coinciden
+      </span>
+    }
+  </div>
+</div>
+<div class="flex flex-col pt-3 pb-3">
+  <label class="flex items-center gap-2 cursor-pointer">
+    <div class="relative flex w-4 h-4">
+      <input
+        type="checkbox"
+        class="w-full h-full cursor-pointer"
+        name="rememberMe"
+        formControlName="aceptoTerminos"
+      />
+    </div>
+    <span class="text-slate-600 text-sm leading-5">
+      Acepto los
+      <button type="button" class="forgot-password-btn">
+        términos y condiciones
+      </button>
+    </span>
+  </label>
+  @if( formUtils.esCampoValido(registroIndividualForm, 'aceptoTerminos') ){
+    <span class="text-xs text-red-500 mt-1">
+      Debe de aceptar los términos y condiciones para poder registrarse.
+    </span>
+  }
+</div>
+    <button
+      class="signin-btn"
+      type="submit"
+      [disabled]="cargando()"
+    >
+      @if (cargando()) { Enviando... } @else { Regístrate }
+    </button>
+</form>
+</section>

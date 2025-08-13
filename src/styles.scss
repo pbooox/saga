@@ -6,6 +6,7 @@
 @use "components/icons" as icons;
 // Import Tailwind CSS v4
 @use "tailwindcss";
+// Removed invalid SCSS @use for SweetAlert2 CSS. Loaded via angular.json styles instead.
 
 // Angular Material core
 @include mat.core();
@@ -175,6 +176,29 @@ img {
 
   &.btn-large {
     padding: 1rem 2rem;
+  }
+
+  &.btn-help-primary {
+    background-color: white;
+    color: #047857; // Emerald-700
+    border: none;
+
+    &:hover {
+      background-color: #f0fdfa; // Emerald-50
+      color: #065f46;
+    }
+  }
+
+  &.btn-help-outline {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 0 0 0 1px white;
+
+    &:hover {
+      background-color: white;
+      color: #047857; // Emerald-700
+    }
   }
 
   svg,
