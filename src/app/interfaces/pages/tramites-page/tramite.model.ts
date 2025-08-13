@@ -5,5 +5,6 @@ export interface tramiteCard {
   categoria: string,
   ministerio: string,
   duracion: string,
+  isBeta?: boolean;
+  link?: string;
 }
-
