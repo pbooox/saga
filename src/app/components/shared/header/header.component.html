@@ -71,11 +71,14 @@
         role="presentation"
       >
         <nav class="flex flex-col gap-1 p-6">
-          <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()"
+          <a routerLink="/" class="mobile-nav-link" (click)="toggleMobileMenu()"
             >Inicio</a
           >
-          <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()"
+          <a routerLink="/tramites" class="mobile-nav-link" (click)="toggleMobileMenu()"
             >Trámites</a
+          >
+          <a routerLink="/tramites-beta" class="mobile-nav-link text-primary flex items-center gap-2" (click)="toggleMobileMenu()"
+            >Formulario FIABI <span class="text-xs bg-primary text-white px-1.5 py-0.5 rounded-full">BETA</span></a
           >
           <a href="#" class="mobile-nav-link" (click)="toggleMobileMenu()"
             >Seguimiento de Trámite</a
