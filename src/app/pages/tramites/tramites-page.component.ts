@@ -63,6 +63,17 @@ export class TramitesPageComponent {
 
   tramites = signal([
     {
+      id: 0,
+      titulo: "Formulario Instrumento Ambiental Bajo Impacto (FIABI)",
+      descripcion:
+        "Complete el proceso de evaluación ambiental para proyectos de bajo impacto de manera digital y eficiente.",
+      categoria: "ambiental",
+      ministerio: "marn",
+      duracion: "45-90 días",
+      isBeta: true,
+      link: "/tramites-beta"
+    },
+    {
       id: 1,
       titulo: "Licencia Ambiental para Proyectos Industriales",
       descripcion:
